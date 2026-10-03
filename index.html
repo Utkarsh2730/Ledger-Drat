@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ledger Draft</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='27' fill='%231F4A3D'/%3E%3Ccircle cx='32' cy='32' r='27' stroke='%23A9812F' stroke-width='2.5' stroke-dasharray='4 4.5' fill='none'/%3E%3Cpath d='M21 33.5L28 40.5L43 24.5' stroke='%23F5F1E8' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="letterhead">
+  <div class="wrap">
+    <div class="mark">
+  <svg class="mark-badge" width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="32" cy="32" r="27" fill="#1F4A3D"/>
+    <circle cx="32" cy="32" r="27" stroke="#A9812F" stroke-width="2.5" stroke-dasharray="4 4.5" fill="none"/>
+    <path d="M21 33.5L28 40.5L43 24.5" stroke="#F5F1E8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <span class="mark-text">Ledger <em>Draft</em></span>
+</div>
+    <nav>
+      <button class="nav-btn" type="button" id="navHowBtn">How it works</button>
+      <button class="nav-btn" type="button" id="navToolBtn">Build a draft</button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="dateline">A first-draft assistant for independent CA practices</div>
+    <h1>Give your reviewing partner back the hours the year-end spends on drafting.</h1>
+    <p class="lede">
+      Compliance letters, audit observations, and client summaries follow the same shape every time —
+      only the names and numbers change. Ledger Draft turns your firm's details into a ready-to-review
+      draft in minutes, so the partner's time goes to judgment, not typing.
+    </p>
+    <div class="actions">
+      <button class="btn-primary" type="button" id="heroBuildBtn">Generate a draft — free</button>
+      <button class="btn-text-btn" type="button" id="heroHowBtn">See how it works</button>
+    </div>
+  </div>
+</section>
+
+<section class="rule-section">
+  <div class="wrap grid">
+    <h2>The problem</h2>
+    <div class="body">
+      <p>
+        Even at senior levels, a meaningful share of year-end work isn't judgment — it's writing.
+        The same compliance reminder, the same structure of audit observation, the same client
+        letter, drafted from scratch every time because no two clients' details are identical.
+      </p>
+      <p>
+        Ledger Draft doesn't replace review. It removes the blank page — so what reaches the partner
+        is already most of the way there, waiting to be checked, not written.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="sequence" id="how">
+  <div class="wrap">
+    <h2>How it works</h2>
+
+    <div class="seq-item">
+      <div class="seq-num">1</div>
+      <div><h3>Choose the document</h3><p>Compliance reminder, audit observation, client summary, or a GST notice reply.</p></div>
+    </div>
+    <div class="seq-item">
+      <div class="seq-num">2</div>
+      <div><h3>Fill in the specifics</h3><p>Client name, the facts of the matter, the figures involved — and optionally attach a supporting document.</p></div>
+    </div>
+    <div class="seq-item">
+      <div class="seq-num">3</div>
+      <div><h3>Generate the draft</h3><p>Ledger Draft sends your details securely and returns a finished first draft, right on the page.</p></div>
+    </div>
+    <div class="seq-item">
+      <div class="seq-num">4</div>
+      <div><h3>Copy it out</h3><p>Copy the draft into your firm's usual document, email, or template.</p></div>
+    </div>
+    <div class="seq-item">
+      <div class="seq-num">5</div>
+      <div><h3>Review before it leaves the firm</h3><p>Every draft is exactly that — a draft. The partner's review is still what makes it final.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="tool-section" id="tool">
+  <div class="wrap">
+    <h2>Build a draft</h2>
+    <p>Details you enter are sent securely to generate the draft — never stored, and never used for anything beyond producing this one document.</p>
+
+    <div class="ledger-sheet">
+      <div class="ledger-head">
+        <div><label for="docType">Document type</label></div>
+        <select id="docType"></select>
+      </div>
+
+      <div class="ledger-body">
+        <div class="ledger-col fields">
+          <form id="fieldsForm"></form>
+          <button id="buildBtn" type="button">Generate Draft</button>
+          <p class="status" id="statusMsg"></p>
+        </div>
+        <div class="ledger-col">
+          <div class="output-header">
+            <span>Generated draft</span>
+            <button id="copyBtn" type="button">Copy</button>
+          </div>
+          <textarea id="outputText" placeholder="Your prompt will appear here once built." spellcheck="false"></textarea>
+        </div>
+      </div>
+
+      <p class="caveat">
+        This produces a first draft only. Figures, section references, and enclosures should always
+        be verified by the firm before a document is sent to a client or department.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Ledger Draft is a free tool for drafting first-pass documents. It does not store, transmit, or retain anything you enter.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

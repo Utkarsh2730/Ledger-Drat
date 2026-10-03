@@ -1,0 +1,154 @@
+:root {
+  --paper: #F5F1E8;
+  --paper-dim: #EDE7D8;
+  --ink: #211F1C;
+  --ink-soft: #514C42;
+  --ledger: #1F4A3D;
+  --ledger-soft: #3C6355;
+  --rule: #D9D0BC;
+  --seal: #A9812F;
+  --seal-hover: #8C6B26;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "IBM Plex Sans", -apple-system, sans-serif;
+  line-height: 1.55;
+}
+h1, h2, h3 { font-family: "Source Serif 4", Georgia, serif; font-weight: 600; margin: 0; }
+a { color: var(--ledger); }
+
+.wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+header.letterhead {
+  border-bottom: 1px solid var(--rule);
+  padding: 22px 0;
+}
+.letterhead .wrap { display: flex; justify-content: space-between; align-items: baseline; }
+.mark { display: flex; align-items: center; gap: 10px; }
+.mark-badge { flex-shrink: 0; display: block; }
+.mark-text { font-family: "Source Serif 4", serif; font-size: 1.15rem; letter-spacing: 0.01em; }
+.mark-text em { font-style: italic; color: var(--ledger); }
+.letterhead nav .nav-btn {
+  background: none; border: none; cursor: pointer;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.85rem; color: var(--ink-soft); text-decoration: none; margin-left: 22px; padding: 0;
+}
+.letterhead nav .nav-btn:hover { color: var(--ledger); }
+
+.hero { padding: 72px 0 56px; }
+.hero .dateline { font-size: 0.85rem; color: var(--ink-soft); margin-bottom: 18px; }
+.hero h1 {
+  font-size: 2.4rem; line-height: 1.22; max-width: 640px; color: var(--ink);
+}
+.hero p.lede {
+  max-width: 560px; font-size: 1.08rem; color: var(--ink-soft); margin-top: 20px;
+}
+.hero .actions { margin-top: 32px; display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--ledger); color: var(--paper); border: none; padding: 12px 22px;
+  font-family: "IBM Plex Sans", sans-serif; font-size: 0.95rem; font-weight: 500;
+  border-radius: 3px; cursor: pointer; text-decoration: none; display: inline-block;
+}
+.btn-primary:hover { background: var(--ledger-soft); }
+.btn-text { font-size: 0.9rem; color: var(--ink-soft); text-decoration: underline; text-underline-offset: 3px; }
+.btn-text-btn {
+  background: none; border: none; padding: 0; cursor: pointer;
+  font-family: "IBM Plex Sans", sans-serif; font-size: 0.9rem; color: var(--ink-soft);
+  text-decoration: underline; text-underline-offset: 3px;
+}
+
+.rule-section { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 44px 0; }
+.rule-section .grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 40px; }
+@media (max-width: 700px) { .rule-section .grid { grid-template-columns: 1fr; } }
+.rule-section h2 { font-size: 1.5rem; }
+.rule-section .body { font-size: 0.98rem; color: var(--ink-soft); }
+.rule-section .body p { margin: 0 0 14px; }
+
+.sequence { padding: 56px 0; }
+.sequence h2 { font-size: 1.5rem; margin-bottom: 34px; }
+.seq-item {
+  display: grid; grid-template-columns: 44px 1fr; gap: 18px;
+  padding: 18px 0; border-top: 1px solid var(--rule);
+}
+.seq-item:last-child { border-bottom: 1px solid var(--rule); }
+.seq-num { font-family: "Source Serif 4", serif; font-size: 1.2rem; color: var(--seal); }
+.seq-item h3 { font-size: 1.02rem; margin-bottom: 4px; }
+.seq-item p { margin: 0; font-size: 0.92rem; color: var(--ink-soft); }
+
+.tool-section { padding: 20px 0 72px; }
+.tool-section > .wrap > h2 { font-size: 1.5rem; margin-bottom: 8px; }
+.tool-section > .wrap > p { font-size: 0.95rem; color: var(--ink-soft); margin: 0 0 28px; max-width: 560px; }
+
+.ledger-sheet {
+  background: #FFFDF8;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  box-shadow: 0 1px 0 var(--rule);
+}
+.ledger-head {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 22px; border-bottom: 1px solid var(--rule); flex-wrap: wrap; gap: 10px;
+}
+.ledger-head label { font-size: 0.8rem; color: var(--ink-soft); margin-right: 10px; }
+select#docType {
+  font-family: "IBM Plex Sans", sans-serif; font-size: 0.92rem; padding: 7px 10px;
+  border: 1px solid var(--rule); border-radius: 3px; background: #fff; color: var(--ink);
+}
+.ledger-body { display: grid; grid-template-columns: 1fr 1fr; }
+@media (max-width: 760px) { .ledger-body { grid-template-columns: 1fr; } }
+.ledger-col { padding: 22px; }
+.ledger-col.fields { border-right: 1px solid var(--rule); }
+@media (max-width: 760px) { .ledger-col.fields { border-right: none; border-bottom: 1px solid var(--rule); } }
+
+.ledger-col label {
+  display: block; font-size: 0.82rem; font-weight: 500; color: var(--ink); margin: 14px 0 6px;
+}
+.ledger-col label:first-of-type { margin-top: 0; }
+textarea {
+  width: 100%; padding: 9px 10px; border: 1px solid var(--rule); border-radius: 3px;
+  font-size: 0.9rem; font-family: "IBM Plex Sans", sans-serif; background: #fff; color: var(--ink);
+  resize: vertical;
+}
+textarea:focus, select:focus {
+  outline: 2px solid var(--seal); outline-offset: 1px;
+}
+
+input[type="file"] {
+  width: 100%; font-size: 0.85rem; font-family: "IBM Plex Sans", sans-serif;
+  padding: 6px 0; color: var(--ink-soft);
+}
+.file-hint {
+  font-size: 0.76rem; color: var(--ink-soft); margin: 4px 0 0; line-height: 1.4;
+}
+
+#buildBtn {
+  margin-top: 18px; width: 100%; padding: 11px; background: var(--seal); color: #fff;
+  border: none; border-radius: 3px; font-size: 0.92rem; font-weight: 500; cursor: pointer;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+#buildBtn:hover { background: var(--seal-hover); }
+
+.output-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.output-header span { font-size: 0.82rem; font-weight: 500; color: var(--ink-soft); }
+.output-header button {
+  background: #fff; border: 1px solid var(--rule); border-radius: 3px;
+  padding: 6px 10px; font-size: 0.8rem; cursor: pointer; font-family: "IBM Plex Sans", sans-serif;
+}
+#outputText {
+  width: 100%; min-height: 340px; font-family: "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.82rem; line-height: 1.5;
+}
+.status { min-height: 16px; font-size: 0.8rem; color: var(--seal); margin-top: 8px; }
+.caveat {
+  margin: 0; padding: 10px 22px; border-top: 1px solid var(--rule);
+  font-size: 0.78rem; color: var(--ink-soft); background: var(--paper-dim);
+}
+
+footer { border-top: 1px solid var(--rule); padding: 28px 0 40px; }
+footer p { font-size: 0.82rem; color: var(--ink-soft); margin: 0; }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
